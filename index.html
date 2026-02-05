@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="my">
+<head>
+  <meta charset="UTF-8" />
+  <title>To letter for You!</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+      font-family: 'Segoe UI', sans-serif;
+    }.card {
+  background: rgba(255,255,255,0.85);
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  max-width: 500px;
+  text-align: center;
+}
+
+button {
+  border: none;
+  background: #ff7eb3;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+#text {
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #444;
+  min-height: 120px;
+  white-space: pre-line;
+}
+
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>💌 To letter For You "L"</h2>
+    <button onclick="startTyping()">To Read</button>
+    <div id="text"></div>
+  </div>  <script>
+    const message = "I miss you so much, every single day.\nI try to forget, but I can't. Not a single memory related to you will fade away.\n\nI'm sorry for all the mistakes I made.\nIf I could be given just one more chance, I truly wish we could be okay again.\n\nI feel like I've made a mistake that I can never fix.\nWhen you're unhappy, when there's no one by your side, I'm here.\n\nPlease come back.\nYou will always be welcome, at any time.\nI'll always be waiting.";
+    let index = 0;
+    let typing = false;
+
+    function startTyping() {
+      if (typing) return;
+      typing = true;
+      index = 0;
+      document.getElementById('text').innerHTML = "";
+      typeNext();
+    }
+
+    function typeNext() {
+      if (index < message.length) {
+        document.getElementById('text').innerHTML += message.charAt(index);
+        index++;
+        setTimeout(typeNext, 60);
+      }
+    }
+  </script></body>
+</html>
